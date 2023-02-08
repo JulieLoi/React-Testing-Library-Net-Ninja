@@ -2,7 +2,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import AddInput from '../AddInput';
 
-describe.only("ADD INPUT", () => {
+describe("ADD INPUT", () => {
 
     const mockedSetTodos = jest.fn();                       // hook mock
 
@@ -47,7 +47,7 @@ describe.only("ADD INPUT", () => {
 
         // Checks typing into input box (userEvent)
         it("should be able to type into input box - userEvent", async () => {
-            const user = userEvent.setup()
+            const user = userEvent.setup();
     
             render(<AddInput todos={[]} setTodos={mockedSetTodos} />);
             const inputElement = screen.getByPlaceholderText(placeholderText);
@@ -61,7 +61,7 @@ describe.only("ADD INPUT", () => {
 
         // Checks input box is empty when the add button is triggered (userEvent)
         it("should have empty input when add button is clicked - userEvent", async () => {
-            const user = userEvent.setup()
+            const user = userEvent.setup();
 
             render(<AddInput todos={[]} setTodos={mockedSetTodos} />);
             const inputElement = screen.getByPlaceholderText(placeholderText);

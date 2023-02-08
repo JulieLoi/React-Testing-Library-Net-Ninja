@@ -2,19 +2,19 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import TodoFooter from '../TodoFooter';
 
+// Mock Todo Footer (BrowserRouter)
+const MockTodoFooter = ({ numberOfIncompleteTasks }) => {
+    return (
+        <BrowserRouter>
+            <TodoFooter numberOfIncompleteTasks={numberOfIncompleteTasks} />
+        </BrowserRouter>
+    );
+}
+
 describe("TODO FOOTER", () => {
 
     const taskNumber = 0;
-    const paragraphText = `${taskNumber} ${taskNumber !== 1 ? "tasks" : "task"} left`
-
-    // Mock Todo Footer (BrowserRouter)
-    const MockTodoFooter = ({ numberOfIncompleteTasks }) => {
-        return (
-            <BrowserRouter>
-                <TodoFooter numberOfIncompleteTasks={numberOfIncompleteTasks} />
-            </BrowserRouter>
-        );
-    }
+    const paragraphText = `${taskNumber} ${taskNumber !== 1 ? "tasks" : "task"} left`;
 
     describe("Testing Render", () => {
         // Unit Test: Render `taskNumber` text
