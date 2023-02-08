@@ -6,9 +6,9 @@ https://github.com/harblaith7/React-Testing-Library-Net-Ninja
 This project covers unit testing and integration testing for a React app.
 
 # Test Notes
-https://testing-library.com/docs/queries/about/
-https://jestjs.io/docs/getting-started
-https://jestjs.io/docs/expect
+ * https://testing-library.com/docs/queries/about/
+ * https://jestjs.io/docs/getting-started
+ * https://jestjs.io/docs/expect
 
 ## <u>Types of Tests</u>
 <table>
