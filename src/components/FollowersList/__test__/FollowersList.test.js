@@ -13,6 +13,22 @@ const MockFollowersList = () => {
 
 describe("FOLLOWERS LIST", () => {
 
+    beforeAll(() => {
+        console.log("RUNS ONCE BEFORE ALL FOLLOWERS LIST TESTS");
+    });
+
+    beforeEach(() => {
+        console.log("RUNS BEFORE EACH TEST");
+    });
+
+    afterEach(() => {
+        console.log("RUNS AFTER EACH TEST");
+    });
+
+    afterAll(() => {
+        console.log("RUNS ONCE AFTER ALL FOLLOWERS LIST TESTS");
+    });
+
     describe("Render Follower(s)", () => {
         // Check if first follower card is rendered
         test("should render the first follower", async () => {
