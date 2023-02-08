@@ -93,7 +93,7 @@ We shall focus more on the test block example, especially on the query method fo
     </tr>
 </table>
 
-### <u>Priority</u>
+## <u>Priority</u>
 Now that we have discussed all of the prefixes for the query method, let us discuss the attribute portion.
 
 In testing, we want to mimick user actions as much as possible in our tests.
@@ -119,7 +119,7 @@ As seen from the chart above, we want to use the query methods for components th
 The last priority is a Test ID (<code>data-test-id</code>), which is never seen by the user. It is the last resort if the screen cannot find the element.
  * [getByTestId](https://testing-library.com/docs/queries/bytestid): The user cannot see (or hear) these, so this is only recommended for cases where you can't match by role or text or it doesn't make sense (e.g. the text is dynamic).
 
-### <u>Assertions</u> ([Link](https://jestjs.io/docs/expect))
+## <u>Assertions</u> ([Link](https://jestjs.io/docs/expect))
 Assertions from Jest test a component's element that has been retrieved (and maybe interacted with). It "expects" something from this element, which has many different assertion matchers, such as some of the following:
  * [Common Matchers](https://jestjs.io/docs/using-matchers#common-matchers)
     * toBe: the simplest way to test a value is with exact equality of objects.
@@ -166,6 +166,6 @@ You can also test for the opposite of a matcher using <code>not</code>.
     </tr>
 </table>
 
-
+## <u>Fire Events</u> ([Link](https://testing-library.com/docs/dom-testing-library/api-events))
 
 
