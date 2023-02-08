@@ -166,6 +166,23 @@ You can also test for the opposite of a matcher using <code>not</code>.
     </tr>
 </table>
 
+## <u>Fire Events vs User Events</u>
+Most projects have a few use cases for `fireEvent`, but the majority of the time you should probably use @testing-library/user-event.
+
+`fireEvent` is a lightweight wrapper around the browser's low-level `dispatchEvent` API, which allows developers to trigger any event on any element.
+
+`user-event` is a companion library for Testing Library that simulates user interactions by dispatching the events that would happen if the interaction took place in a browser.
+
+The problem with `fireEvent` is that the browser usually does more than just trigger one event for one interaction. For example, when a user types into a text box, the element has to be focused, and then keyboard and input events are fired and the selection and value on the element are manipulated as they type.
+
+The solution is `user-event`, which allows you to describe a user interaction instead of a concrete event. It adds visibility and interactability checks along the way and manipulates the DOM just like a user interaction in the browser would. 
+ - It also factors in that the browser e.g. wouldn't let a user click a hidden element or type in a disabled text box.
+
+
 ## <u>Fire Events</u> ([Link](https://testing-library.com/docs/dom-testing-library/api-events))
+`fireEvent` dispatchs DOM events.
+
+## <u>User Events</u> ([Link](https://testing-library.com/docs/user-event/intro))
+`user-event` simulates full interactions, which may fire multiple events and do additional checks along the way.
 
 
