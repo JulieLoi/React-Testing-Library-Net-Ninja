@@ -1,3 +1,12 @@
+Starting Project
+- Cloned the "Starter Project" Branch
+https://github.com/harblaith7/React-Testing-Library-Net-Ninja
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

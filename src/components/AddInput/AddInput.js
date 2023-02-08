@@ -3,12 +3,11 @@ import "./AddInput.css"
 import { v4 } from "uuid"
 import TodoList from '../TodoList/TodoList'
 
-function AddInput({
-    setTodos, todos
-}) {
+function AddInput({ setTodos, todos }) {
 
     const [todo, setTodo] = useState("")
 
+    // Add Todo Item
     const addTodo = () => {
         let updatedTodos = [
             ...todos,
@@ -19,9 +18,10 @@ function AddInput({
             }
         ]
         setTodos(updatedTodos);
-        setTodo("")
+        setTodo("");
     }
 
+    // Add Todo Item Component
     return (
         <div className="input-container">
             <input 
