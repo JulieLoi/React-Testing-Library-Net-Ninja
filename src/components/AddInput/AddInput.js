@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import "./AddInput.css"
 import { v4 } from "uuid"
-import TodoList from '../TodoList/TodoList'
 
 function AddInput({ setTodos, todos }) {
 
@@ -9,6 +8,7 @@ function AddInput({ setTodos, todos }) {
 
     // Add Todo Item
     const addTodo = () => {
+        if(!todo) return
         let updatedTodos = [
             ...todos,
             {
