@@ -1,4 +1,4 @@
-# Project
+# React-Testing-Library Project
 Starting Project
 - Cloned the "Starter Project" Branch
 https://github.com/harblaith7/React-Testing-Library-Net-Ninja
