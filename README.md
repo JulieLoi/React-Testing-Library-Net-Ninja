@@ -179,13 +179,13 @@ The solution is `user-event`, which allows you to describe a user interaction in
  - It also factors in that the browser e.g. wouldn't let a user click a hidden element or type in a disabled text box.
 
 
-## <u>Fire Events</u> ([Link](https://testing-library.com/docs/dom-testing-library/api-events))
+### <u>Fire Events</u> ([Link](https://testing-library.com/docs/dom-testing-library/api-events))
 `fireEvent` dispatchs DOM events.
 
-## <u>User Events</u> ([Link](https://testing-library.com/docs/user-event/intro))
+### <u>User Events</u> ([Link](https://testing-library.com/docs/user-event/intro))
 `user-event` simulates full interactions, which may fire multiple events and do additional checks along the way.
 
-# <u>Mocking Requests</u>
+## <u>Mocking Requests</u>
 To test the frontend completely, it is necessary to mock requests to the backend and get dummy data as a response.
 
 We should not use real requests for three main reasons:
@@ -201,9 +201,17 @@ The tests will not work with the mock unless we do the following:
  3) Go to line 68 and change the value of `resetMocks` from `true` to `false`.
  4) Restart and run your tests (`npm run test`)
 
+## <u>Setups and Teardowns</u> ([Link](https://jestjs.io/docs/setup-teardown))
+Often while writing tests you have some setup work that needs to happen before tests run, and you have some finishing work that needs to happen after tests run. Jest provides helper functions to handle this.
 
+### Repeating Setups
+If you have some work you need to do repeatedly for many tests, you can use `beforeEach` and `afterEach` hooks.
 
+### One-Time Setup
+In some cases, you only need to do setup once, at the beginning of a file. This can be especially bothersome when the setup is asynchronous, so you can't do it inline. Jest provides `beforeAll` and `afterAll` hooks to handle this situation.
 
+### Scoping
+The top level `before*` and `after*` hooks apply to every test in a file. 
 
-
+The hooks declared inside a describe block apply only to the tests within that describe block.
 
