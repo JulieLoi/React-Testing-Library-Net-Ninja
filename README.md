@@ -185,4 +185,25 @@ The solution is `user-event`, which allows you to describe a user interaction in
 ## <u>User Events</u> ([Link](https://testing-library.com/docs/user-event/intro))
 `user-event` simulates full interactions, which may fire multiple events and do additional checks along the way.
 
+# <u>Mocking Requests</u>
+To test the frontend completely, it is necessary to mock requests to the backend and get dummy data as a response.
+
+We should not use real requests for three main reasons:
+ * Requests cost money
+ * Requests are slow
+ * This would mean our tests are dependent on something external
+
+In this project, we want to mock the FollowersList axios data.
+
+The tests will not work with the mock unless we do the following:
+ 1) Go to `node_modules\react-scripts\scripts\utils`
+ 2) Click on the `createJestConfig.js` file
+ 3) Go to line 68 and change the value of `resetMocks` from `true` to `false`.
+ 4) Restart and run your tests (`npm run test`)
+
+
+
+
+
+
 
