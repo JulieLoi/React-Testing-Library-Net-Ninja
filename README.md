@@ -7,6 +7,8 @@ This project covers unit testing and integration testing for a React app.
 
 # Test Notes
 https://testing-library.com/docs/queries/about/
+https://jestjs.io/docs/getting-started
+https://jestjs.io/docs/expect
 
 ## <u>Types of Tests</u>
 <table>
@@ -87,7 +89,6 @@ We shall focus more on the test block example, especially on the query method fo
         </code></td>
         <td>
             In this test block, we use the <code>getByText()</code> to get an element, which we suspect to be a <code>linkElement</code>.<br />
-
         </td>
     </tr>
 </table>
@@ -118,8 +119,52 @@ As seen from the chart above, we want to use the query methods for components th
 The last priority is a Test ID (<code>data-test-id</code>), which is never seen by the user. It is the last resort if the screen cannot find the element.
  * [getByTestId](https://testing-library.com/docs/queries/bytestid): The user cannot see (or hear) these, so this is only recommended for cases where you can't match by role or text or it doesn't make sense (e.g. the text is dynamic).
 
+### <u>Assertions</u> ([Link](https://jestjs.io/docs/expect))
+Assertions from Jest test a component's element that has been retrieved (and maybe interacted with). It "expects" something from this element, which has many different assertion matchers, such as some of the following:
+ * [Common Matchers](https://jestjs.io/docs/using-matchers#common-matchers)
+    * toBe: the simplest way to test a value is with exact equality of objects.
+    * toEqual: tests equality of the fields/values of objects/arrays (ignores undefined).
+    * toStrictEqual: tests equality of the fields/values of objects/arrays (includes undefined, preferred).
+ * [Truthiness](https://jestjs.io/docs/using-matchers#truthiness)
+    * toBeNull: matches only null
+    * toBeUndefined: matches only undefined
+    * toBeDefined: is the opposite of toBeUndefined
+    * toBeTruthy: matches anything that an if statement treats as true
+    * toBeFalsy: matches anything that an if statement treats as false
+ * [Numbers](https://jestjs.io/docs/using-matchers#numbers)
+    * toBe/toEqual: equivalent matchers for numbers
+    * toBeCloseTo: floating point number to ignore some minor rounding error (alternative for toBe/toEqual)
+    * toBeGreaterThan: tests that number is greater than
+    * toBeGreaterThanOrEqual: tests that number is greater than or equal
+    * toBeLessThan: tests that number is less than
+    * toBeLessThanOrEqual: tests that number is less than or equal
+ * [String](https://jestjs.io/docs/using-matchers#strings)
+    * toMatch: checks strings against regular expressions (regex)
+ * [Arrays and Iterables](https://jestjs.io/docs/using-matchers#arrays-and-iterables)
+    * toContain: check if an array or iterable contains a particular item
+ * [Exceptions](https://jestjs.io/docs/using-matchers#exceptions)
+    * toThrow: test whether a particular function throws an error when it's called
 
 
+You can also test for the opposite of a matcher using <code>not</code>.
+
+<table>
+    <tr>
+        <th>Assertion Code</th>
+        <th>Assertion Description</th>
+    </tr>
+    <tr>
+        <td><code>
+                expect(element).toBeInTheDocument();<br />
+                expect(element).not.toBeInTheDocument();<br />
+        </code></td>
+        <td>
+            In general, in this code, <code>expect(element)</code> returns an "expectation" object. You typically won't do much with these expectation objects except call matchers on them.<br />
+            The first line of code checks that the <code>element</code> is in the document.<br />
+            The second line of code checks that the <code>element</code> is in the document using the <code>not</code>.
+        </td>
+    </tr>
+</table>
 
 
 
