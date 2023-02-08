@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from 'react-router-dom';
 import Todo from "../Todo";
 
-// Mock Todo Footer (BrowserRouter)
+// Mock Todo (BrowserRouter)
 const MockTodo = () => {
     return (
         <BrowserRouter>
